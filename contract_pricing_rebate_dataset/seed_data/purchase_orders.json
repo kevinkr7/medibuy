@@ -1,0 +1,137 @@
+[
+  {
+    "po_id": "P01",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-01-10",
+    "quantity": 300,
+    "entered_unit_price": "100.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P02",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-02-05",
+    "quantity": 200,
+    "entered_unit_price": "100.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P03",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-03-10",
+    "quantity": 500,
+    "entered_unit_price": "90.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P04",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-04-10",
+    "quantity": 400,
+    "entered_unit_price": "100.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P05",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-05-14",
+    "quantity": 100,
+    "entered_unit_price": "100.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P06",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-05-15",
+    "quantity": 200,
+    "entered_unit_price": "110.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P07",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-06-20",
+    "quantity": 300,
+    "entered_unit_price": "110.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P08",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "purchase_date": "2025-12-01",
+    "quantity": 600,
+    "entered_unit_price": "104.50",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P09",
+    "supplier_id": "S2",
+    "material_code": "LATEX-MED",
+    "purchase_date": "2025-01-08",
+    "quantity": 300,
+    "entered_unit_price": "60.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P10",
+    "supplier_id": "S2",
+    "material_code": "LATEX-MED",
+    "purchase_date": "2025-03-03",
+    "quantity": 300,
+    "entered_unit_price": "54.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P11",
+    "supplier_id": "S2",
+    "material_code": "LATEX-MED",
+    "purchase_date": "2025-06-05",
+    "quantity": 250,
+    "entered_unit_price": "60.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P12",
+    "supplier_id": "S2",
+    "material_code": "LATEX-MED",
+    "purchase_date": "2025-11-11",
+    "quantity": 200,
+    "entered_unit_price": "58.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P13",
+    "supplier_id": "S3",
+    "material_code": "FILM-MED",
+    "purchase_date": "2025-04-10",
+    "quantity": 200,
+    "entered_unit_price": "80.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P14",
+    "supplier_id": "S3",
+    "material_code": "FILM-MED",
+    "purchase_date": "2025-07-20",
+    "quantity": 500,
+    "entered_unit_price": "76.00",
+    "currency": "INR"
+  },
+  {
+    "po_id": "P15",
+    "supplier_id": "S3",
+    "material_code": "FILM-MED",
+    "purchase_date": "2025-12-12",
+    "quantity": 250,
+    "entered_unit_price": "80.00",
+    "currency": "INR"
+  }
+]

@@ -1,0 +1,1 @@
+- All MediBuy API calls go through src/lib/api/client.ts (base URL from VITE_API_BASE_URL); UI never computes pricing/rebates — the external FastAPI backend is the source of truth.

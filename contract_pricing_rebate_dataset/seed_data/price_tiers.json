@@ -1,0 +1,86 @@
+[
+  {
+    "tier_id": "AGR-001-V1-T1",
+    "version_id": "AGR-001-V1",
+    "min_quantity_inclusive": 0,
+    "max_quantity_exclusive": 500,
+    "discount_percent": 0
+  },
+  {
+    "tier_id": "AGR-001-V1-T2",
+    "version_id": "AGR-001-V1",
+    "min_quantity_inclusive": 500,
+    "max_quantity_exclusive": 1000,
+    "discount_percent": 5
+  },
+  {
+    "tier_id": "AGR-001-V1-T3",
+    "version_id": "AGR-001-V1",
+    "min_quantity_inclusive": 1000,
+    "max_quantity_exclusive": null,
+    "discount_percent": 10
+  },
+  {
+    "tier_id": "AGR-001-V2-T1",
+    "version_id": "AGR-001-V2",
+    "min_quantity_inclusive": 0,
+    "max_quantity_exclusive": 500,
+    "discount_percent": 0
+  },
+  {
+    "tier_id": "AGR-001-V2-T2",
+    "version_id": "AGR-001-V2",
+    "min_quantity_inclusive": 500,
+    "max_quantity_exclusive": 1000,
+    "discount_percent": 5
+  },
+  {
+    "tier_id": "AGR-001-V2-T3",
+    "version_id": "AGR-001-V2",
+    "min_quantity_inclusive": 1000,
+    "max_quantity_exclusive": null,
+    "discount_percent": 8
+  },
+  {
+    "tier_id": "AGR-002-V1-T1",
+    "version_id": "AGR-002-V1",
+    "min_quantity_inclusive": 0,
+    "max_quantity_exclusive": 300,
+    "discount_percent": 0
+  },
+  {
+    "tier_id": "AGR-002-V1-T2",
+    "version_id": "AGR-002-V1",
+    "min_quantity_inclusive": 300,
+    "max_quantity_exclusive": 600,
+    "discount_percent": 5
+  },
+  {
+    "tier_id": "AGR-002-V1-T3",
+    "version_id": "AGR-002-V1",
+    "min_quantity_inclusive": 600,
+    "max_quantity_exclusive": null,
+    "discount_percent": 10
+  },
+  {
+    "tier_id": "AGR-003-V1-T1",
+    "version_id": "AGR-003-V1",
+    "min_quantity_inclusive": 0,
+    "max_quantity_exclusive": 200,
+    "discount_percent": 0
+  },
+  {
+    "tier_id": "AGR-003-V1-T2",
+    "version_id": "AGR-003-V1",
+    "min_quantity_inclusive": 200,
+    "max_quantity_exclusive": 500,
+    "discount_percent": 2
+  },
+  {
+    "tier_id": "AGR-003-V1-T3",
+    "version_id": "AGR-003-V1",
+    "min_quantity_inclusive": 500,
+    "max_quantity_exclusive": null,
+    "discount_percent": 5
+  }
+]

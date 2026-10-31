@@ -1,0 +1,851 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MediBuy",
+    "version": "0.3.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/suppliers": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "List Suppliers",
+        "operationId": "list_suppliers_suppliers_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Suppliers Suppliers Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/agreements": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "List Agreements",
+        "operationId": "list_agreements_agreements_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/AgreementResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Agreements Agreements Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/purchase-orders": {
+      "get": {
+        "tags": [
+          "purchase orders"
+        ],
+        "summary": "List Purchase Orders",
+        "operationId": "list_purchase_orders_purchase_orders_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PurchaseOrderPricingResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Purchase Orders Purchase Orders Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "purchase orders"
+        ],
+        "summary": "Create Purchase Order",
+        "operationId": "create_purchase_order_purchase_orders_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PurchaseOrderCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurchaseOrderPricingResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/purchase-orders/{po_id}/price": {
+      "get": {
+        "tags": [
+          "purchase orders"
+        ],
+        "summary": "Get Purchase Order Price",
+        "operationId": "get_purchase_order_price_purchase_orders__po_id__price_get",
+        "parameters": [
+          {
+            "name": "po_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Po Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurchaseOrderPricingResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rebates/{year}": {
+      "get": {
+        "tags": [
+          "rebates"
+        ],
+        "summary": "Get Rebates",
+        "operationId": "get_rebates_rebates__year__get",
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 9999,
+              "minimum": 1,
+              "title": "Year"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnnualRebateReportResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "tags": [
+          "dashboard"
+        ],
+        "summary": "Get Dashboard",
+        "operationId": "get_dashboard_dashboard_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgreementResponse": {
+        "properties": {
+          "agreement_id": {
+            "type": "string",
+            "title": "Agreement Id"
+          },
+          "supplier_id": {
+            "type": "string",
+            "title": "Supplier Id"
+          },
+          "material_code": {
+            "type": "string",
+            "title": "Material Code"
+          },
+          "valid_from": {
+            "type": "string",
+            "format": "date",
+            "title": "Valid From"
+          },
+          "valid_to": {
+            "type": "string",
+            "format": "date",
+            "title": "Valid To"
+          },
+          "annual_target_quantity": {
+            "type": "integer",
+            "title": "Annual Target Quantity"
+          },
+          "annual_rebate_percent": {
+            "type": "integer",
+            "title": "Annual Rebate Percent"
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "versions": {
+            "items": {
+              "$ref": "#/components/schemas/AgreementVersionResponse"
+            },
+            "type": "array",
+            "title": "Versions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "agreement_id",
+          "supplier_id",
+          "material_code",
+          "valid_from",
+          "valid_to",
+          "annual_target_quantity",
+          "annual_rebate_percent",
+          "currency",
+          "unit",
+          "versions"
+        ],
+        "title": "AgreementResponse"
+      },
+      "AgreementVersionResponse": {
+        "properties": {
+          "version_id": {
+            "type": "string",
+            "title": "Version Id"
+          },
+          "version_number": {
+            "type": "integer",
+            "title": "Version Number"
+          },
+          "effective_from": {
+            "type": "string",
+            "format": "date",
+            "title": "Effective From"
+          },
+          "effective_to": {
+            "type": "string",
+            "format": "date",
+            "title": "Effective To"
+          },
+          "base_unit_price": {
+            "type": "string",
+            "title": "Base Unit Price"
+          },
+          "change_note": {
+            "type": "string",
+            "title": "Change Note"
+          },
+          "price_tiers": {
+            "items": {
+              "$ref": "#/components/schemas/PriceTierResponse"
+            },
+            "type": "array",
+            "title": "Price Tiers"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version_id",
+          "version_number",
+          "effective_from",
+          "effective_to",
+          "base_unit_price",
+          "change_note",
+          "price_tiers"
+        ],
+        "title": "AgreementVersionResponse"
+      },
+      "AnnualRebateReportResponse": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currency"
+          },
+          "rebates": {
+            "items": {
+              "$ref": "#/components/schemas/AnnualRebateResponse"
+            },
+            "type": "array",
+            "title": "Rebates"
+          },
+          "total_rebate_earned": {
+            "type": "string",
+            "title": "Total Rebate Earned"
+          }
+        },
+        "type": "object",
+        "required": [
+          "year",
+          "currency",
+          "rebates",
+          "total_rebate_earned"
+        ],
+        "title": "AnnualRebateReportResponse"
+      },
+      "AnnualRebateResponse": {
+        "properties": {
+          "agreement_id": {
+            "type": "string",
+            "title": "Agreement Id"
+          },
+          "supplier_id": {
+            "type": "string",
+            "title": "Supplier Id"
+          },
+          "annual_purchased_quantity": {
+            "type": "integer",
+            "title": "Annual Purchased Quantity"
+          },
+          "annual_target_quantity": {
+            "type": "integer",
+            "title": "Annual Target Quantity"
+          },
+          "target_met": {
+            "type": "boolean",
+            "title": "Target Met"
+          },
+          "eligible_contract_value": {
+            "type": "string",
+            "title": "Eligible Contract Value"
+          },
+          "rebate_percent": {
+            "type": "integer",
+            "title": "Rebate Percent"
+          },
+          "rebate_earned": {
+            "type": "string",
+            "title": "Rebate Earned"
+          },
+          "target_first_met_by_po": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target First Met By Po"
+          },
+          "target_first_met_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target First Met On"
+          }
+        },
+        "type": "object",
+        "required": [
+          "agreement_id",
+          "supplier_id",
+          "annual_purchased_quantity",
+          "annual_target_quantity",
+          "target_met",
+          "eligible_contract_value",
+          "rebate_percent",
+          "rebate_earned",
+          "target_first_met_by_po",
+          "target_first_met_on"
+        ],
+        "title": "AnnualRebateResponse"
+      },
+      "DashboardResponse": {
+        "properties": {
+          "total_suppliers": {
+            "type": "integer",
+            "title": "Total Suppliers"
+          },
+          "total_agreements": {
+            "type": "integer",
+            "title": "Total Agreements"
+          },
+          "total_purchase_orders": {
+            "type": "integer",
+            "title": "Total Purchase Orders"
+          },
+          "overcharged_purchase_orders": {
+            "type": "integer",
+            "title": "Overcharged Purchase Orders"
+          },
+          "undercharged_purchase_orders": {
+            "type": "integer",
+            "title": "Undercharged Purchase Orders"
+          },
+          "total_overcharge_amount": {
+            "type": "string",
+            "title": "Total Overcharge Amount"
+          },
+          "total_undercharge_amount": {
+            "type": "string",
+            "title": "Total Undercharge Amount"
+          },
+          "total_eligible_contract_value": {
+            "type": "string",
+            "title": "Total Eligible Contract Value"
+          },
+          "total_earned_rebate": {
+            "type": "string",
+            "title": "Total Earned Rebate"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_suppliers",
+          "total_agreements",
+          "total_purchase_orders",
+          "overcharged_purchase_orders",
+          "undercharged_purchase_orders",
+          "total_overcharge_amount",
+          "total_undercharge_amount",
+          "total_eligible_contract_value",
+          "total_earned_rebate"
+        ],
+        "title": "DashboardResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "HealthResponse"
+      },
+      "PriceTierResponse": {
+        "properties": {
+          "tier_id": {
+            "type": "string",
+            "title": "Tier Id"
+          },
+          "min_quantity_inclusive": {
+            "type": "integer",
+            "title": "Min Quantity Inclusive"
+          },
+          "max_quantity_exclusive": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Quantity Exclusive"
+          },
+          "discount_percent": {
+            "type": "integer",
+            "title": "Discount Percent"
+          }
+        },
+        "type": "object",
+        "required": [
+          "tier_id",
+          "min_quantity_inclusive",
+          "max_quantity_exclusive",
+          "discount_percent"
+        ],
+        "title": "PriceTierResponse"
+      },
+      "PurchaseOrderCreate": {
+        "properties": {
+          "po_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Po Id"
+          },
+          "supplier_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Supplier Id"
+          },
+          "material_code": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Material Code"
+          },
+          "purchase_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Purchase Date"
+          },
+          "quantity": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Quantity"
+          },
+          "entered_unit_price": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Entered Unit Price"
+          },
+          "currency": {
+            "type": "string",
+            "maxLength": 3,
+            "minLength": 3,
+            "pattern": "^[A-Z]{3}$",
+            "title": "Currency"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "po_id",
+          "supplier_id",
+          "material_code",
+          "purchase_date",
+          "quantity",
+          "entered_unit_price",
+          "currency"
+        ],
+        "title": "PurchaseOrderCreate"
+      },
+      "PurchaseOrderPricingResponse": {
+        "properties": {
+          "po_id": {
+            "type": "string",
+            "title": "Po Id"
+          },
+          "supplier_id": {
+            "type": "string",
+            "title": "Supplier Id"
+          },
+          "material_code": {
+            "type": "string",
+            "title": "Material Code"
+          },
+          "purchase_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Purchase Date"
+          },
+          "quantity": {
+            "type": "integer",
+            "title": "Quantity"
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency"
+          },
+          "agreement_id": {
+            "type": "string",
+            "title": "Agreement Id"
+          },
+          "agreement_version_id": {
+            "type": "string",
+            "title": "Agreement Version Id"
+          },
+          "quarter": {
+            "type": "string",
+            "title": "Quarter"
+          },
+          "quarter_quantity_before_po": {
+            "type": "integer",
+            "title": "Quarter Quantity Before Po"
+          },
+          "quarter_quantity_after_po": {
+            "type": "integer",
+            "title": "Quarter Quantity After Po"
+          },
+          "annual_quantity_after_po": {
+            "type": "integer",
+            "title": "Annual Quantity After Po"
+          },
+          "tier_discount_percent": {
+            "type": "integer",
+            "title": "Tier Discount Percent"
+          },
+          "base_unit_price": {
+            "type": "string",
+            "title": "Base Unit Price"
+          },
+          "entered_unit_price": {
+            "type": "string",
+            "title": "Entered Unit Price"
+          },
+          "correct_unit_price": {
+            "type": "string",
+            "title": "Correct Unit Price"
+          },
+          "correct_line_amount": {
+            "type": "string",
+            "title": "Correct Line Amount"
+          },
+          "entered_line_amount": {
+            "type": "string",
+            "title": "Entered Line Amount"
+          },
+          "variance_amount": {
+            "type": "string",
+            "title": "Variance Amount"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "OVERCHARGED",
+              "UNDERCHARGED"
+            ],
+            "title": "Status"
+          },
+          "annual_rebate_earned_after_po": {
+            "type": "string",
+            "title": "Annual Rebate Earned After Po"
+          },
+          "rebate_newly_unlocked_by_po": {
+            "type": "string",
+            "title": "Rebate Newly Unlocked By Po"
+          }
+        },
+        "type": "object",
+        "required": [
+          "po_id",
+          "supplier_id",
+          "material_code",
+          "purchase_date",
+          "quantity",
+          "currency",
+          "agreement_id",
+          "agreement_version_id",
+          "quarter",
+          "quarter_quantity_before_po",
+          "quarter_quantity_after_po",
+          "annual_quantity_after_po",
+          "tier_discount_percent",
+          "base_unit_price",
+          "entered_unit_price",
+          "correct_unit_price",
+          "correct_line_amount",
+          "entered_line_amount",
+          "variance_amount",
+          "status",
+          "annual_rebate_earned_after_po",
+          "rebate_newly_unlocked_by_po"
+        ],
+        "title": "PurchaseOrderPricingResponse"
+      },
+      "SupplierResponse": {
+        "properties": {
+          "supplier_id": {
+            "type": "string",
+            "title": "Supplier Id"
+          },
+          "supplier_name": {
+            "type": "string",
+            "title": "Supplier Name"
+          },
+          "material_code": {
+            "type": "string",
+            "title": "Material Code"
+          },
+          "material_name": {
+            "type": "string",
+            "title": "Material Name"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "supplier_id",
+          "supplier_name",
+          "material_code",
+          "material_name",
+          "unit"
+        ],
+        "title": "SupplierResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

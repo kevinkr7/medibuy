@@ -1,0 +1,38 @@
+[
+  {
+    "version_id": "AGR-001-V1",
+    "agreement_id": "AGR-001",
+    "version_number": 1,
+    "effective_from": "2025-01-01",
+    "effective_to": "2025-05-14",
+    "base_unit_price": "100.00",
+    "change_note": "Original annual agreement."
+  },
+  {
+    "version_id": "AGR-001-V2",
+    "agreement_id": "AGR-001",
+    "version_number": 2,
+    "effective_from": "2025-05-15",
+    "effective_to": "2025-12-31",
+    "base_unit_price": "110.00",
+    "change_note": "Mid-Q2 amendment: base price rises from INR 100 to 110; top quarterly discount changes from 10% to 8%. Annual rebate remains unchanged."
+  },
+  {
+    "version_id": "AGR-002-V1",
+    "agreement_id": "AGR-002",
+    "version_number": 1,
+    "effective_from": "2025-01-01",
+    "effective_to": "2025-12-31",
+    "base_unit_price": "60.00",
+    "change_note": "Original annual agreement."
+  },
+  {
+    "version_id": "AGR-003-V1",
+    "agreement_id": "AGR-003",
+    "version_number": 1,
+    "effective_from": "2025-01-01",
+    "effective_to": "2025-12-31",
+    "base_unit_price": "80.00",
+    "change_note": "Original annual agreement."
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "agreement_id": "AGR-001",
+    "supplier_id": "S1",
+    "material_code": "RESIN-MED",
+    "valid_from": "2025-01-01",
+    "valid_to": "2025-12-31",
+    "annual_target_quantity": 2500,
+    "annual_rebate_percent": 3,
+    "currency": "INR",
+    "unit": "kg"
+  },
+  {
+    "agreement_id": "AGR-002",
+    "supplier_id": "S2",
+    "material_code": "LATEX-MED",
+    "valid_from": "2025-01-01",
+    "valid_to": "2025-12-31",
+    "annual_target_quantity": 1000,
+    "annual_rebate_percent": 2,
+    "currency": "INR",
+    "unit": "kg"
+  },
+  {
+    "agreement_id": "AGR-003",
+    "supplier_id": "S3",
+    "material_code": "FILM-MED",
+    "valid_from": "2025-01-01",
+    "valid_to": "2025-12-31",
+    "annual_target_quantity": 900,
+    "annual_rebate_percent": 4,
+    "currency": "INR",
+    "unit": "kg"
+  }
+]

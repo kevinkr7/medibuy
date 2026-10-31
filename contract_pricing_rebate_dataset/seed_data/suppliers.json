@@ -1,0 +1,23 @@
+[
+  {
+    "supplier_id": "S1",
+    "supplier_name": "MedPolymer",
+    "material_code": "RESIN-MED",
+    "material_name": "Medical-grade plastic resin",
+    "unit": "kg"
+  },
+  {
+    "supplier_id": "S2",
+    "supplier_name": "PureLatex",
+    "material_code": "LATEX-MED",
+    "material_name": "Medical-grade latex",
+    "unit": "kg"
+  },
+  {
+    "supplier_id": "S3",
+    "supplier_name": "SteriPack",
+    "material_code": "FILM-MED",
+    "material_name": "Sterile packaging film",
+    "unit": "kg"
+  }
+]

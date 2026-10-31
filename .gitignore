@@ -1,0 +1,63 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyd
+*.egg-info/
+.python-version
+
+# Python tests and coverage
+.pytest_cache/
+.pytest_tmp/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Frontend dependencies and generated output
+node_modules/
+dist/
+dist-ssr/
+.output/
+.vinxi/
+.tanstack/
+.nitro/
+.wrangler/
+.dev.vars
+
+# Local databases and runtime data
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+.runtime/
+
+# Environment configuration and secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
